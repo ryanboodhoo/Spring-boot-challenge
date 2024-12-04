@@ -1,0 +1,379 @@
+What is an API?
+
+API's act like a bridge between the frontend and backend for websites
+
+Allowing websites to communicate to each other keep them on the same page
+
+API most of time specifies a set of rules and protocols
+
+Without Api we would have to do every task manually causing us time and being prone to errors
+
+Chapter 2 What is HTTP
+
+HTTP (HyperText Transfer Protocol) is a set of rules that lets computers talk to each other over the internet, like when a browser asks a website for information.
+
+It uses methods like requests and responses to send and receive data.
+
+Request methods are just actions these actions allow us to manipulate data to do what we want it to do
+
+Get-To show data that's been created on the server
+
+Post-To create or add to our server
+
+Put-To update a resource on the server the entire server
+
+Delete-To Remove a resource for example if a student dropped out
+
+Patch-Used when ONLY you want to change A Part of the server
+
+Response Codes
+
+Anything with that starts with 2 is a success code like 200 which means the data was sent successfully
+
+300-399 is a redirection code meaning the requested resources has been moved from on location to another and you need to update your url
+
+400-499 the most famous being 404 error not found means the it couldn't be found on the server at all
+
+these are all ways client error codes
+
+500-599  these are server error codes meaning that there was an error on the server side the prevented the request from going though
+
+Headers
+
+Headers in HTTP are like labels that give extra details about a request or response. They are key-value pairs and help with:
+
+Authorization: Adding login credentials to access resources.
+
+Cache-Control: Telling how long to store a response to avoid repeated requests.
+
+Content-Type: Saying what kind of data (like JSON) is being sent.
+
+Accept: Letting the server know what type of data the client can handle.
+
+Message Formats
+
+HTTP messages are how computers talk:
+
+Requests: Sent by the client (e.g., a browser) to ask for something.
+
+Request line: Method (like GET), the URL, and HTTP version.
+
+Headers: Extra details about the request.
+
+Body (optional): Extra data, like form inputs.
+
+Responses: Sent by the server to answer the request.
+
+Status line: HTTP version, a response code (e.g., 200 for success), and a message.
+
+Headers: Extra details about the response.
+
+Body (optional): The data being sent back, like a webpage or JSON.
+
+Chapter 3 Different types of HTTP headers
+
+Request Headers: Sent by the client to provide details about the request, e.g.,
+
+User-Agent: Specifies the client type.
+
+Accept: Indicates the content types the client can handle.
+
+Response Headers: Sent by the server to provide details about the response, e.g.,
+
+Content-Type: Specifies the type of content being sent.
+
+Cache-Control: Indicates caching rules for the client.
+
+Entity Headers: Accompany the entity body of a request or response, e.g.,
+
+Content-Length: Indicates the entity body's size.
+
+Content-Encoding: Specifies compression used for the content.
+
+Chapter 4 Different types of HTTP Methods
+
+HTTP methods are verbs used to specify the action a client wants to perform on a resource. Common methods include:
+
+GET: Retrieves a resource from the server. It is idempotent, meaning repeated requests have the same effect.
+
+POST: Submits data to the server for processing. It is not idempotent, so repeated requests can have different effects.
+
+PUT: Updates or replaces a resource on the server. It is idempotent.
+
+DELETE: Removes a resource from the server. It is idempotent.
+
+OPTIONS: Retrieves the communication options available for a resource, including methods and headers.
+
+HEAD: Similar to GET but retrieves only headers, not the body of the resource.
+
+CONNECT: Establishes a network tunnel for secure communication with a resource.
+
+TRACE: Provides a diagnostic trace of client-server communication by echoing the request and response headers.
+
+
+Chapter 5 What is a REST API?
+
+R.E.S.T Stands for Representational State Transfer
+
+This allow computers to take to each other over the internet in a way that is standardized and easy understand
+
+REST APIs allow one computer to ask another computer for information or to perform an action, like creating a new user account.
+
+The computer sending the request uses standard language (HTTP) to make the request, and the computer receiving the request responds with standard language as well.
+
+This makes it easy for different computers, written in different programming languages, to communicate with each other.
+
+Chapter 6 Key features of Rest API's
+
+REST APIs let apps talk to each other over the internet by sending and receiving data in a simple, standard way. They are popular because:
+
+They allow apps to work together without being too dependent on each other.
+
+Changes to one app usually don’t break the other.
+
+This makes it easy for web and mobile apps to share information and work smoothly.
+
+Client-server architecture - The client (like a customer) makes a request, such as ordering food.
+The server (like a waiter) takes the request to the kitchen (the system providing data).
+Once ready, the server brings the result (the data or resource) back to the client.
+
+ This setup lets clients (apps) and servers (data providers) work together smoothly, just like in a well-run restaurant.
+
+Stateless Communication -
+
+Each HTTP request is self-contained, meaning it includes all the information the server needs to process it.
+
+The server doesn’t remember previous requests, like a mom who gives you a cookie each time you ask without recalling past requests
+
+Uniform interface - Clients and servers exchange data in common formats like JSON or XML, like using a shared language to communicat
+
+Standard HTTP Methods: These methods perform CRUD operations:
+
+GET: Retrieve data (like looking up information).
+
+POST: Create data (like adding new info).
+
+PUT: Update data (like editing info).
+
+DELETE: Remove data (like clearing something out).
+
+Each method is like a specific tool designed for a particular task, ensuring efficiency and clarity.
+
+Use of hypermedia - REST APIs use hypermedia to include links in server responses, helping clients navigate the API. Each resource has a unique URL, like a house has its own street address, making it easy to locate and access specific data.
+
+Chapter 7 -Principles of REST API
+Roy Fielding created REST in 2000, and RESTful APIs follow its guidelines. The six key principles of REST are:
+
+Client-server Separation: The client (like a customer) and server (like a waiter) are separate and don’t rely on each other, providing flexibility.
+
+Stateless: Each request is independent. The server doesn’t remember past requests, much like a shopkeeper not recalling previous visits.
+
+Cacheable: Servers can store responses to speed up future requests, just like a shopkeeper remembering your past purchases to recommend similar items.
+
+Layered System: The API has multiple layers, each serving a different purpose, similar to how a building has floors, and the client interacts only with the top layer.
+
+Uniform Interface: The API has a consistent structure, like a restaurant menu with clear descriptions, using standard methods (GET, POST, PUT, DELETE) and URLs to access resources.
+
+Code on Demand (optional): The server may send executable code (like JavaScript) to the client, adding functionality without altering the app itself.
+
+Chapter 8-Anatomy of a REST API
+Resource: A resource represents an object or concept that can be accessed through a URL, like a user, article, or photo. Each resource has a unique identifier, such as /users/{id}.
+
+HTTP Methods: These methods perform actions on resources:
+
+GET: Retrieve a resource.
+
+POST: Create a new resource.
+
+PUT: Update an existing resource.
+
+DELETE: Remove a resource.
+
+URI (Uniform Resource Identifier): The URI uniquely identifies a resource, typically made up of a base URL and a path. For example, http://example.com/api/users/{id} identifies a user resource using its unique ID.
+
+HTTP Headers: These provide extra information about a request or response, such as:
+
+Content-Type: Specifies the format of the data (e.g., JSON, XML).
+
+Authorization: Provides authentication details for the request.
+
+Request Body: The data sent in a POST or PUT request, often in JSON or XML format, containing the information needed to create or update a resource.
+
+Response Body: The data returned by the server in response to a request, usually in JSON or XML format, containing the requested information.
+
+Status Codes: These three-digit codes indicate the outcome of a request. Common examples include:
+
+200 OK: The request was successful.
+
+404 Not Found: The requested resource could not be found.
+
+Chapter 9 Crud Operations
+Create:
+
+The user adds a new book by filling out a form with details like the title, author, and publication date.
+
+The app sends an HTTP POST request to the server with the new book data in the request body.
+
+The server creates a new record in the database with this information.
+
+Read:
+
+The user wants to view all the books in the collection.
+
+They click a "View Books" button, which sends an HTTP GET request to the server.
+
+The server retrieves the book records from the database and returns them to the client in the response body.
+
+Update:
+
+The user wants to edit the details of an existing book.
+
+They click an "Edit" button next to the book, which loads the book's data into a form.
+
+After editing, the user submits the form, sending an HTTP PUT or PATCH request to the server with the updated book information.
+
+The server updates the corresponding record in the database.
+
+Delete:
+
+The user wants to remove a book from the collection.
+
+They click a "Delete" button next to the book, which sends an HTTP DELETE request to the server with the book's unique ID in the URL.
+
+The server deletes the corresponding record from the database.
+
+These CRUD operations ensure the application can create, read, update, and delete books in the collection efficiently.
+
+Chapter 10 -Best Practices for REST API
+
+Use Meaningful Resource URIs
+
+URIs should clearly identify the resource. For example:
+
+https://api.example.com/books/123 clearly identifies a specific book.
+
+Use HTTP Methods Correctly
+
+Use the right HTTP methods for different actions:
+
+GET for retrieving data
+
+POST for creating data
+
+PUT/PATCH for updating data
+
+DELETE for removing data.
+
+Example:
+
+POST /books to create a new book.
+
+Use Correct HTTP Response Codes
+
+Use the appropriate status codes:
+
+200 OK for successful requests
+
+201 Created for new resources
+
+204 No Content for successful deletes
+
+400 Bad Request for invalid data
+
+404 Not Found for missing resources.
+
+Use Nouns, Not Verbs, in URIs
+
+Represent resources as nouns, not actions.
+
+Example: /users (not /createUser).
+
+Consistent Naming Conventions
+
+Maintain consistency in naming conventions for endpoints, HTTP methods, and request/response structures for better readability and maintainability.
+
+Provide Comprehensive Documentation
+
+Document all endpoints, parameters, expected responses, and examples. Consider using interactive documentation tools.
+
+Versioning
+
+Include versioning in the URI or headers to avoid breaking changes.
+
+Example: https://api.example.com/v1/books.
+
+Proper Security Measures
+
+Implement security protocols like OAuth2 and JWT for authentication and authorization, and use encryption.
+
+Consider Performance
+
+Optimize response times, use caching, and improve database queries. For large datasets, use pagination.
+
+Example: GET /books?page=1&limit=10 to return paginated results.
+
+Handle Errors Gracefully
+
+Ensure proper error handling, including returning the appropriate status codes and meaningful error messages to help users debug issues.
+
+By following these best practices, developers can create secure, user-friendly, and high-performing REST APIs.
+
+Chapter 11 Building a REST API
+
+Building a REST API involves a series of steps to ensure it is well-designed, functional, and scalable. Here’s a breakdown of the process:
+
+Identify the Resources
+
+Define the resources (e.g., books, users, products) the API will provide access to.
+
+Plan and organize the endpoints needed to interact with these resources.
+
+Choose the Appropriate HTTP Methods
+
+Decide on the HTTP methods for each resource:
+
+GET: Retrieve data.
+
+POST: Create new data.
+
+PUT/PATCH: Update existing data.
+
+DELETE: Remove data.
+
+Design the Data Model
+
+Create a schema for each resource and define the relationships between resources. This helps structure the data that will be exchanged via the API.
+
+Choose a Framework
+
+Select a suitable framework or library to build the API. Popular options include:
+
+Node.js with Express (JavaScript)
+
+Ruby on Rails (Ruby)
+
+Django (Python)
+
+Implement the Endpoints
+
+Develop the actual endpoints for your API.
+
+Define request and response formats (typically JSON).
+
+Implement error handling and security measures like authentication.
+
+Test the API
+
+Test the API to ensure it works as expected, handling edge cases and errors. Automated testing tools can be helpful for consistency.
+
+Document the API
+
+Provide comprehensive documentation that describes how each endpoint works, the data format, expected responses, and how to handle errors.
+
+Deploy the API
+
+Deploy the API to a production server.
+
+Monitor performance and ensure that the API is scalable, secure, and reliable.
+
+By following these steps, you can create a robust, efficient, and maintainable REST API that meets the needs of developers and users alike.
