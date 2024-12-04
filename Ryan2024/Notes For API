@@ -377,3 +377,12 @@ Deploy the API to a production server.
 Monitor performance and ensure that the API is scalable, secure, and reliable.
 
 By following these steps, you can create a robust, efficient, and maintainable REST API that meets the needs of developers and users alike.
+
+Springboot anotations notes
+@RestController: Marks the class as a REST controller, meaning it will handle HTTP requests and return domain objects instead of views. It is a combination of @Controller and @ResponseBody.
+
+@GetMapping: Maps HTTP GET requests to the specified method. In this case, it maps GET requests to the /greeting endpoint.
+
+@RequestParam: Binds the value of a query string parameter to a method parameter. It is used to bind the name query parameter to the name argument in the greeting() method. The defaultValue attribute provides a fallback if the parameter is not provided.
+
+@SpringBootApplication: A convenience annotation that includes @Configuration, @EnableAutoConfiguration, and @ComponentScan. It marks the main class of a Spring Boot application and enables automatic configuration and component scanning.
